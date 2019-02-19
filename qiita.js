@@ -1,6 +1,13 @@
 import * as admin from 'firebase-admin'
 import axios from 'axios'
-import serviceAccount from './serviceAccountKey.json'
+
+let serviceAccount
+if(process.env.stage === 'prod') {
+  serviceAccount = require('./config/serviceAccountKeyProd.json')
+}
+else {
+  serviceAccount = require('./config/serviceAccountKeyDev.json')
+}
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),

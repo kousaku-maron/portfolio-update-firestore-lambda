@@ -9,4 +9,5 @@ jspm_packages
 .webpack
 
 # config
-serviceAccountKey.json
+config/serviceAccountKeyDev.json
+config/serviceAccountKeyProd.json
